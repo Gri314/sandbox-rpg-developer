@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bcflxy2m841jk"]
+
+[ext_resource type="Script" uid="uid://c1qdmd3msxph6" path="res://demo/scenes/fight_scene.gd" id="1_keksv"]
+[ext_resource type="PackedScene" uid="uid://cp20yi5ql5870" path="res://demo/composites/ui_main.tscn" id="1_p8b18"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_keksv"]
+
+[node name="fight_scene" type="Control" unique_id=1157955025]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_keksv")
+
+[node name="background_image" type="TextureRect" parent="." unique_id=623968275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ImageTexture_keksv")
+
+[node name="ui_main" parent="." unique_id=107462659 instance=ExtResource("1_p8b18")]
+layout_mode = 1

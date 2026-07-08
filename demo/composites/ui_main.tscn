@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cp20yi5ql5870"]
+
+[ext_resource type="Script" uid="uid://dugwyibsip1g0" path="res://demo/composites/ui_main.gd" id="1_4prj7"]
+[ext_resource type="PackedScene" uid="uid://cbiqxtpvme2dn" path="res://demo/composites/window.tscn" id="2_ulaah"]
+
+[node name="ui_main" type="Control" unique_id=107462659]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4prj7")
+
+[node name="top_left" type="HBoxContainer" parent="." unique_id=1255802498]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="refresh" type="Button" parent="top_left" unique_id=1367717376]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "↻"
+
+[node name="popup" type="Button" parent="top_left" unique_id=799126488]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "🪟"
+
+[node name="Window" parent="." unique_id=1054933521 instance=ExtResource("2_ulaah")]
+visible = false
+
+[connection signal="pressed" from="top_left/refresh" to="." method="_on_refresh_pressed"]
+[connection signal="pressed" from="top_left/popup" to="." method="_on_popup_pressed"]
