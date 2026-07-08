@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Reeves-RPG-clone-demo-1"
-run/main_scene="uid://bcflxy2m841jk"
+run/main_scene="uid://cp20yi5ql5870"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://demo/icon.svg"
 
 [physics]
 

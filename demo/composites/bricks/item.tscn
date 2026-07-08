@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://qltkvoq5ysf"]
+
+[ext_resource type="Script" uid="uid://p31nm77kjapb" path="res://demo/composites/bricks/item.gd" id="1_6h6i2"]
+
+[node name="item" type="HBoxContainer" unique_id=1129990116]
+script = ExtResource("1_6h6i2")
+
+[node name="name" type="LineEdit" parent="." unique_id=1008149232]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "<no name>"
+editable = false
+
+[node name="send" type="Button" parent="." unique_id=1835970227]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/h_separation = 0
+text = "⇫"

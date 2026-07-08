@@ -29,7 +29,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "🪟"
 
-[node name="Window" parent="." unique_id=1054933521 instance=ExtResource("2_ulaah")]
+[node name="Windows" type="Node" parent="." unique_id=1430067462]
+
+[node name="Window" parent="Windows" unique_id=1054933521 instance=ExtResource("2_ulaah")]
+title = "Different Asset Manager"
 visible = false
 
 [connection signal="pressed" from="top_left/refresh" to="." method="_on_refresh_pressed"]

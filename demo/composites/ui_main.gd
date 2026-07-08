@@ -2,17 +2,12 @@ extends Control
 
 @export var current_scene: Node2D
 
-@onready var window = $Window
-
-func update_popup_position():
-	window.position = 0.5*self.size
-
-func _ready():
-	## ensure window is centered
-	update_popup_position()
+@onready var windows = $Windows
 
 func _on_refresh_pressed():
-	current_scene.refresh()
+	## refresh everything that needs to be refreshed
+	pass
 
 func _on_popup_pressed():
-	window.visible = not window.visible
+	for obj in windows.get_children():
+		obj.visible = true

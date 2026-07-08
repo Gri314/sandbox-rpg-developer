@@ -1,38 +1,66 @@
 [gd_scene format=3 uid="uid://cbiqxtpvme2dn"]
 
+[ext_resource type="Script" uid="uid://413ni0temq8" path="res://demo/composites/asset_manager.gd" id="1_qmdjv"]
+
 [node name="Window" type="Window" unique_id=1054933521]
 oversampling_override = 1.0
-position = Vector2i(0, 36)
+title = "Asset Manager"
+initial_position = 1
+size = Vector2i(200, 250)
+script = ExtResource("1_qmdjv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=966004166]
+[node name="vbox" type="VBoxContainer" parent="." unique_id=966004166]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=110947681]
+[node name="top_hbox" type="HBoxContainer" parent="vbox" unique_id=110947681]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1424654322]
+[node name="repopulate" type="Button" parent="vbox/top_hbox" unique_id=1424654322]
 layout_mode = 2
 text = "↻"
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer" unique_id=360636011]
+[node name="search" type="LineEdit" parent="vbox/top_hbox" unique_id=839581474]
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Search ..."
 
-[node name="MenuButton" type="MenuButton" parent="VBoxContainer/HBoxContainer" unique_id=2139990054]
+[node name="filters" type="MenuButton" parent="vbox/top_hbox" unique_id=2139990054]
 layout_mode = 2
 text = "▽"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1234145991]
+[node name="scroller" type="ScrollContainer" parent="vbox" unique_id=2089585061]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VScrollBar" type="VScrollBar" parent="VBoxContainer/HBoxContainer2" unique_id=1680879196]
-custom_minimum_size = Vector2(35, 0)
+[node name="list" type="VBoxContainer" parent="vbox/scroller" unique_id=1535693614]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="error_disp" type="LineEdit" parent="vbox/scroller/list" unique_id=1026955932]
+layout_mode = 2
+text = "Enter a filepath below"
+editable = false
+
+[node name="bott_hbox" type="HBoxContainer" parent="vbox" unique_id=1747167645]
+layout_mode = 2
+
+[node name="back" type="Button" parent="vbox/bott_hbox" unique_id=674128167]
+layout_mode = 2
+text = "←"
+
+[node name="forward" type="Button" parent="vbox/bott_hbox" unique_id=200586682]
+layout_mode = 2
+text = "→"
+
+[node name="path" type="LineEdit" parent="vbox/bott_hbox" unique_id=618775602]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "res:// ... "
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="vbox/top_hbox/repopulate" to="." method="_on_repopulate_pressed"]
