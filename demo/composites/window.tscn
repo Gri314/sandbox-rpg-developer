@@ -31,6 +31,9 @@ placeholder_text = "Search ..."
 [node name="filters" type="MenuButton" parent="vbox/top_hbox" unique_id=2139990054]
 layout_mode = 2
 text = "▽"
+item_count = 1
+popup/item_0/text = "Folder"
+popup/item_0/id = 0
 
 [node name="scroller" type="ScrollContainer" parent="vbox" unique_id=2089585061]
 layout_mode = 2
@@ -64,3 +67,5 @@ placeholder_text = "res:// ... "
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="pressed" from="vbox/top_hbox/repopulate" to="." method="_on_repopulate_pressed"]
+[connection signal="pressed" from="vbox/bott_hbox/back" to="." method="_on_back_pressed"]
+[connection signal="text_submitted" from="vbox/bott_hbox/path" to="." method="attempt_open_directory"]

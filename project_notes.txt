@@ -4,14 +4,18 @@
 - [ ] Finish window (asset manager)
 	Missing functionality:
 		- [ ] search
-		- [ ] navigation
-			- [ ] forward/backward history
-			- [ ] click-to-nav for folders
+		- [x] navigation
+			- [ ] forward/backward history << needs complete refactor
+			- [x] click-to-nav for folders
 		- [ ] file upload (for example, to change assets in runtime)
 	
-- [ ] Plan for adding various RPG elements
+- [x] Plan for adding various RPG elements
 	What elements are going to be present?
 	**REMEMBER:** We want to stay *highly* editable so that I can make my own RPG later.
-	- [ ] Get book pdf from reeves
-	- [ ] Combat scene: num ppl, enemy/friend, turn order, stats, rolls, online play, etc.
-	- [ ] world scene: maps, player nav, etc.
+	- [x] Get book pdf from reeves
+	- [x] Combat scene: num ppl, enemy/friend, turn order, stats, rolls, online play, etc.
+	- [x] world scene: maps, player nav, etc.
+	
+- [ ] Abstract system development
+	- [ ] Scene nodes
+	- [ ] 
