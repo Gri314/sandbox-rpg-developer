@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cp20yi5ql5870"]
 
 [ext_resource type="Script" uid="uid://dugwyibsip1g0" path="res://demo/composites/ui_main.gd" id="1_4prj7"]
-[ext_resource type="PackedScene" uid="uid://cbiqxtpvme2dn" path="res://demo/composites/window.tscn" id="2_ulaah"]
+[ext_resource type="PackedScene" uid="uid://cbiqxtpvme2dn" path="res://demo/composites/asset_manager_window.tscn" id="2_ulaah"]
+[ext_resource type="PackedScene" uid="uid://cgocs4ge12mcy" path="res://demo/composites/bricks/sprite.tscn" id="3_xcydt"]
 
 [node name="ui_main" type="Control" unique_id=107462659]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +13,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4prj7")
+
+[node name="Env" type="Node" parent="." unique_id=1239855733]
+
+[node name="sprite" parent="Env" unique_id=144605506 instance=ExtResource("3_xcydt")]
 
 [node name="top_left" type="HBoxContainer" parent="." unique_id=1255802498]
 layout_mode = 0
@@ -27,12 +33,17 @@ text = "↻"
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "🪟"
+text = "🗔"
+
+[node name="settings" type="Button" parent="top_left" unique_id=1564043092]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "⚙"
 
 [node name="Windows" type="Node" parent="." unique_id=1430067462]
 
-[node name="Window" parent="Windows" unique_id=1054933521 instance=ExtResource("2_ulaah")]
-title = "Different Asset Manager"
+[node name="Navigator" parent="Windows" unique_id=1054933521 instance=ExtResource("2_ulaah")]
 visible = false
 
 [connection signal="pressed" from="top_left/refresh" to="." method="_on_refresh_pressed"]

@@ -2,12 +2,24 @@
 
 [ext_resource type="Script" uid="uid://413ni0temq8" path="res://demo/composites/asset_manager.gd" id="1_qmdjv"]
 
-[node name="Window" type="Window" unique_id=1054933521]
+[node name="Navigator" type="Window" unique_id=1054933521]
 oversampling_override = 1.0
 title = "Asset Manager"
 initial_position = 1
 size = Vector2i(200, 250)
 script = ExtResource("1_qmdjv")
+
+[node name="error_disp" type="LineEdit" parent="." unique_id=1026955932]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter a filepath below"
+editable = false
 
 [node name="vbox" type="VBoxContainer" parent="." unique_id=966004166]
 anchors_preset = 15
@@ -31,9 +43,16 @@ placeholder_text = "Search ..."
 [node name="filters" type="MenuButton" parent="vbox/top_hbox" unique_id=2139990054]
 layout_mode = 2
 text = "▽"
-item_count = 1
+item_count = 3
 popup/item_0/text = "Folder"
+popup/item_0/checkable = 1
 popup/item_0/id = 0
+popup/item_1/text = "File"
+popup/item_1/checkable = 1
+popup/item_1/id = 1
+popup/item_2/text = ".png"
+popup/item_2/checkable = 1
+popup/item_2/id = 2
 
 [node name="scroller" type="ScrollContainer" parent="vbox" unique_id=2089585061]
 layout_mode = 2
@@ -43,11 +62,6 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="error_disp" type="LineEdit" parent="vbox/scroller/list" unique_id=1026955932]
-layout_mode = 2
-text = "Enter a filepath below"
-editable = false
 
 [node name="bott_hbox" type="HBoxContainer" parent="vbox" unique_id=1747167645]
 layout_mode = 2

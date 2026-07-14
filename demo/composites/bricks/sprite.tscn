@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://cgocs4ge12mcy"]
+
+[ext_resource type="Texture2D" uid="uid://dkmswng4fihu" path="res://demo/icon.svg" id="1_laep5"]
+[ext_resource type="PackedScene" uid="uid://dr4csvmv7knei" path="res://demo/composites/bricks/edit.tscn" id="2_qbod8"]
+[ext_resource type="Script" uid="uid://bwmlpvr3nrjxf" path="res://demo/composites/bricks/sprite_edit.gd" id="3_se1mj"]
+[ext_resource type="PackedScene" uid="uid://cbiqxtpvme2dn" path="res://demo/composites/asset_manager_window.tscn" id="4_qbod8"]
+[ext_resource type="Script" uid="uid://xch2h1ggeo1l" path="res://demo/composites/sprite_asset_manager.gd" id="5_se1mj"]
+
+[node name="sprite" type="Sprite2D" unique_id=144605506]
+texture = ExtResource("1_laep5")
+
+[node name="edit" parent="." unique_id=1598897746 node_paths=PackedStringArray("ParentSprite") instance=ExtResource("2_qbod8")]
+offset_left = -88.0
+offset_top = -95.0
+offset_right = -64.0
+offset_bottom = -64.0
+script = ExtResource("3_se1mj")
+ParentSprite = NodePath("..")
+Name = "Sprite Config"
+metadata/_edit_use_anchors_ = true
+
+[node name="configure sprite" type="Window" parent="edit" unique_id=334294148]
+oversampling_override = 1.0
+title = "Configure Sprite"
+initial_position = 1
+size = Vector2i(200, 200)
+visible = false
+
+[node name="scroller" type="ScrollContainer" parent="edit/configure sprite" unique_id=986373366]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vbox" type="VBoxContainer" parent="edit/configure sprite/scroller" unique_id=325359680]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="item1" type="ColorRect" parent="edit/configure sprite/scroller/vbox" unique_id=1299842841]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.1462, 0.15294333, 0.17, 1)
+
+[node name="hbox" type="HBoxContainer" parent="edit/configure sprite/scroller/vbox/item1" unique_id=1374855207]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="desc" type="Label" parent="edit/configure sprite/scroller/vbox/item1/hbox" unique_id=678977006]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Set sprite  "
+
+[node name="open_serch" type="Button" parent="edit/configure sprite/scroller/vbox/item1/hbox" unique_id=562739017]
+layout_mode = 2
+text = "🗗"
+
+[node name="Navigator" parent="edit/configure sprite/scroller/vbox/item1/hbox/open_serch" unique_id=1054933521 node_paths=PackedStringArray("target") instance=ExtResource("4_qbod8")]
+visible = false
+script = ExtResource("5_se1mj")
+target = NodePath("../../../../../../..")
+
+[node name="item4" type="ColorRect" parent="edit/configure sprite/scroller/vbox" unique_id=424101331]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.1462, 0.15294333, 0.17, 1)
+
+[node name="hbox" type="HBoxContainer" parent="edit/configure sprite/scroller/vbox/item4" unique_id=1849459972]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="desc" type="Label" parent="edit/configure sprite/scroller/vbox/item4/hbox" unique_id=736846618]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Aspect ratio"
+
+[node name="lock_aspect" type="Button" parent="edit/configure sprite/scroller/vbox/item4/hbox" unique_id=78282438]
+layout_mode = 2
+text = "🔒"
+
+[node name="gsize" type="ColorRect" parent="edit/configure sprite/scroller/vbox" unique_id=1005476097]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.1462, 0.15294333, 0.17, 1)
+
+[node name="hbox" type="HBoxContainer" parent="edit/configure sprite/scroller/vbox/gsize" unique_id=953615336]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="desc" type="Label" parent="edit/configure sprite/scroller/vbox/gsize/hbox" unique_id=315595285]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Size"
+
+[node name="field" type="LineEdit" parent="edit/configure sprite/scroller/vbox/gsize/hbox" unique_id=1595166509]
+layout_mode = 2
+placeholder_text = "x & y"
+
+[node name="xsize" type="ColorRect" parent="edit/configure sprite/scroller/vbox" unique_id=568246515]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.1462, 0.15294333, 0.17, 1)
+
+[node name="hbox" type="HBoxContainer" parent="edit/configure sprite/scroller/vbox/xsize" unique_id=1839610096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="desc" type="Label" parent="edit/configure sprite/scroller/vbox/xsize/hbox" unique_id=1987662786]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Size (x-dir)  "
+
+[node name="field" type="LineEdit" parent="edit/configure sprite/scroller/vbox/xsize/hbox" unique_id=1376933169]
+layout_mode = 2
+placeholder_text = "width"
+
+[node name="ysize" type="ColorRect" parent="edit/configure sprite/scroller/vbox" unique_id=2095884822]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.1462, 0.15294333, 0.17, 1)
+
+[node name="hbox" type="HBoxContainer" parent="edit/configure sprite/scroller/vbox/ysize" unique_id=1809018313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="desc" type="Label" parent="edit/configure sprite/scroller/vbox/ysize/hbox" unique_id=1332544820]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Size (y-dir)  "
+
+[node name="field" type="LineEdit" parent="edit/configure sprite/scroller/vbox/ysize/hbox" unique_id=946125518]
+layout_mode = 2
+placeholder_text = "height"
+
+[node name="xpos" type="ColorRect" parent="edit/configure sprite/scroller/vbox" unique_id=130270280]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.1462, 0.15294333, 0.17, 1)
+
+[node name="hbox" type="HBoxContainer" parent="edit/configure sprite/scroller/vbox/xpos" unique_id=1628687190]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="desc" type="Label" parent="edit/configure sprite/scroller/vbox/xpos/hbox" unique_id=2010959957]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Position: x"
+
+[node name="field" type="LineEdit" parent="edit/configure sprite/scroller/vbox/xpos/hbox" unique_id=1309889041]
+layout_mode = 2
+placeholder_text = "right"
+
+[node name="ypos" type="ColorRect" parent="edit/configure sprite/scroller/vbox" unique_id=1902028129]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.1462, 0.15294333, 0.17, 1)
+
+[node name="hbox" type="HBoxContainer" parent="edit/configure sprite/scroller/vbox/ypos" unique_id=1704756378]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="desc" type="Label" parent="edit/configure sprite/scroller/vbox/ypos/hbox" unique_id=1060652329]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Position: y"
+
+[node name="field" type="LineEdit" parent="edit/configure sprite/scroller/vbox/ypos/hbox" unique_id=1307811373]
+layout_mode = 2
+placeholder_text = "down"
+
+[node name="item5" type="ColorRect" parent="edit/configure sprite/scroller/vbox" unique_id=121008127]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.1462, 0.15294333, 0.17, 1)
+
+[node name="hbox" type="HBoxContainer" parent="edit/configure sprite/scroller/vbox/item5" unique_id=248003921]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="desc" type="Label" parent="edit/configure sprite/scroller/vbox/item5/hbox" unique_id=23425890]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Aspect ratio"
+
+[node name="lock_aspect" type="Button" parent="edit/configure sprite/scroller/vbox/item5/hbox" unique_id=463972485]
+layout_mode = 2
+text = "🔒"
+
+[connection signal="pressed" from="edit" to="edit" method="toggle_window_visibility"]
+[connection signal="close_requested" from="edit/configure sprite" to="edit" method="toggle_window_visibility"]
+[connection signal="pressed" from="edit/configure sprite/scroller/vbox/item1/hbox/open_serch" to="edit/configure sprite/scroller/vbox/item1/hbox/open_serch/Navigator" method="_on_close_requested"]
+[connection signal="pressed" from="edit/configure sprite/scroller/vbox/item4/hbox/lock_aspect" to="edit" method="_on_lock_aspect_pressed"]
+[connection signal="text_submitted" from="edit/configure sprite/scroller/vbox/gsize/hbox/field" to="edit" method="alter_gen_sprite_size"]
+[connection signal="text_submitted" from="edit/configure sprite/scroller/vbox/xsize/hbox/field" to="edit" method="alter_sprite_size"]
+[connection signal="text_submitted" from="edit/configure sprite/scroller/vbox/ysize/hbox/field" to="edit" method="alter_sprite_size"]
+[connection signal="text_submitted" from="edit/configure sprite/scroller/vbox/xpos/hbox/field" to="edit" method="alter_sprite_position"]
+[connection signal="text_submitted" from="edit/configure sprite/scroller/vbox/ypos/hbox/field" to="edit" method="alter_sprite_position"]

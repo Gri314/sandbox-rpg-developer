@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dr4csvmv7knei"]
+
+[ext_resource type="Script" uid="uid://yrn3glk7h4od" path="res://edit_button.gd" id="1_rik07"]
+
+[node name="edit" type="Button" unique_id=1598897746]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "✎"
+script = ExtResource("1_rik07")

@@ -3,19 +3,22 @@
 ## To do:
 - [ ] Finish window (asset manager)
 	Missing functionality:
-		- [ ] search
+		- [x] search
 		- [x] navigation
 			- [ ] forward/backward history << needs complete refactor
 			- [x] click-to-nav for folders
-		- [ ] file upload (for example, to change assets in runtime)
-	
+		- [x] file upload (for example, to change assets in runtime)
+
+- [ ] Create "environments" class
+	- [ ] "simple" inherits env
+		- [ ] static sprites for background
+			- [x] upload and change sprite image
+			- [ ] alter size and position
+		- [ ] characters
+
 - [x] Plan for adding various RPG elements
 	What elements are going to be present?
 	**REMEMBER:** We want to stay *highly* editable so that I can make my own RPG later.
 	- [x] Get book pdf from reeves
 	- [x] Combat scene: num ppl, enemy/friend, turn order, stats, rolls, online play, etc.
 	- [x] world scene: maps, player nav, etc.
-	
-- [ ] Abstract system development
-	- [ ] Scene nodes
-	- [ ] 
